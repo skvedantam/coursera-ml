@@ -33,7 +33,7 @@ fprintf('5x5 Identity Matrix: \n');
 warmUpExercise()
 
 fprintf('Program paused. Press enter to continue.\n');
-pause;
+kbhit(1);
 
 
 %% ======================= Part 2: Plotting =======================
@@ -47,7 +47,7 @@ m = length(y); % number of training examples
 plotData(X, y);
 
 fprintf('Program paused. Press enter to continue.\n');
-pause;
+kbhit();
 
 %% =================== Part 3: Cost and Gradient descent ===================
 
@@ -70,7 +70,7 @@ fprintf('\nWith theta = [-1 ; 2]\nCost computed = %f\n', J);
 fprintf('Expected cost value (approx) 54.24\n');
 
 fprintf('Program paused. Press enter to continue.\n');
-pause;
+kbhit();
 
 fprintf('\nRunning Gradient Descent ...\n')
 % run gradient descent
@@ -81,7 +81,7 @@ fprintf('Theta found by gradient descent:\n');
 fprintf('%f\n', theta);
 fprintf('Expected theta values (approx)\n');
 fprintf(' -3.6303\n  1.1664\n\n');
-
+kbhit();
 % Plot the linear fit
 hold on; % keep previous plot visible
 plot(X(:,2), X*theta, '-')
@@ -97,7 +97,7 @@ fprintf('For population = 70,000, we predict a profit of %f\n',...
     predict2*10000);
 
 fprintf('Program paused. Press enter to continue.\n');
-pause;
+kbhit(1);
 
 %% ============= Part 4: Visualizing J(theta_0, theta_1) =============
 fprintf('Visualizing J(theta_0, theta_1) ...\n')
