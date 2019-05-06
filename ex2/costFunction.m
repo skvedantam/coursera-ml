@@ -22,9 +22,24 @@ grad = zeros(size(theta));
 
 
 
+sigexp = zeros(size(y)); %exponent for sigmoid
+sigexp = X * theta;
 
+% Cost Function
+for i = 1:m
+   J = J + (-y(i) * log(sigmoid(sigexp(i))) - (1 - y(i)) * log(1-sigmoid(sigexp(i))));
+end
 
+J = J / m;
 
+% Gradient
+n = length(theta);
+for j = 1:n
+    for i = 1:m
+        grad(j) = grad(j) + ((sigmoid(sigexp(i)) - y(i)) * X(i,j));
+    end
+    grad(j) = grad(j) / m;
+end
 
 
 % =============================================================
